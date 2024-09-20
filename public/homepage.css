@@ -1,2 +1,73 @@
 @charset "UTF-8";
 
+html, body{
+    margin: 0px;
+    padding: 0px;
+}
+
+*{
+    font-family: sans-serif;
+}
+
+div#pai{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+div#filho{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    height: 70%;
+    width: 50%;
+    background-color: aliceblue;
+}
+
+div.questions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 50%;
+    width: 50%;
+    border: 3px solid black;
+}
+
+h2{
+    font-size: 18px;
+    text-align: center;
+}
+
+div#inputsRadios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.input-box{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid black;
+    border-radius: 10px;
+    height: 30px;
+    width: 60%;
+}
+
+input::placeholder{
+    color: rgba(0, 0, 0, 0.491);
+}
+
+h1{
+    margin: 0px;
+}

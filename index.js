@@ -29,12 +29,6 @@ app.use('/', navigationController)
 
 
 
-app.get('/', (req, res) =>{
-    res.send('its working');
-})
-
-
-
 //RUNNING SERVER
 app.listen(4550, () =>{
     console.log('Server running Ok');

@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>HomePage</title>
     <link rel="stylesheet" href="/homepage.css">
 </head>
 <body>
-    <h1>Welcome to my homepage</h1>
+    <div id="pai">
+        <h1>Gerador de Prompts</h1>
+
+        <div id="filho">
+
+            <div class="questions">
+                <h2>Quer uma nova formatação para um texto já existente ?</h2>
+                <div id="inputsRadios">
+                    <label for="simInput">sim</label>
+                    <input class="input-radio" type="radio" name="simInput" id="isim">
+                    <label for="naoInput">não</label>
+                    <input class="input-radio" type="radio" name="naoInput" id="inao">
+                </div>
+
+                <input class="input-box" type="text" name="tipo" id="itipo" placeholder="Se sim, qual tipo ?">
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
