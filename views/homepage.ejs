@@ -16,7 +16,7 @@
             <div class="questions">
                 <h2>Quer uma NOVA FORMATAÇÃO para um texto já existente ?</h2>
 
-                <form action="promptGenerator" method="post">
+                <form action="promptGenerator" method="post" id="iform">
                     <div id="inputsRadios">
                         <input class="input-radio" type="radio" name="simInput" id="isim">
                         <label for="isim">sim</label>
@@ -24,6 +24,7 @@
                         <input class="input-radio" type="radio" name="naoInput" id="inao">
                         <label for="inao">não</label>
                     </div>
+
                     <select name="formatosTextos" id="formatosTextos">
                         <option value="" selected>Selecione o formato</option>
                         <optgroup label="Formatos">
@@ -38,10 +39,29 @@
                             <option value="Formato de Instrução Técnica">Formato de Instrução Técnica</option>
                         </optgroup>
                     </select>
-                    <button>Enviar</button>
+                    <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->
                 </form>
             </div>
         </div>
     </div>
 </body>
+
+<script>
+    var btt = document.getElementById('btt-id')
+    var form = document.getElementById('iform')
+    
+
+    btt.addEventListener('click', () =>{
+        var formatoTextos = document.getElementById('formatosTextos').value;        
+        var simBtt = document.getElementById('isim').value;        
+        var naoBtt = document.getElementById('inao').value;        
+
+        if(formatoTextos === ''){
+            window.alert(`Campo ${formatoTextos} não preenchido. Preencha todos os campos, por favor!`)
+        }else{
+            form.submit()
+        }
+    })
+</script>
+
 </html>
