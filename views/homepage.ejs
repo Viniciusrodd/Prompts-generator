@@ -11,40 +11,36 @@
         <h1>Gerador de Prompts</h1>
 
         <div id="filho">
-            <h2>Escolha opções de prompts</h2>
+            <h2>ESCOLHA AS OPÇÕES DE PROMPTS</h2>
 
             <div class="questions">
                 <h2>Quer uma NOVA FORMATAÇÃO para um texto já existente ?</h2>
-                <div id="inputsRadios">
-                    <input class="input-radio" type="radio" name="simInput" id="isim">
-                    <label for="simInput">sim</label>
+
+                <form action="promptGenerator" method="post">
+                    <div id="inputsRadios">
+                        <input class="input-radio" type="radio" name="simInput" id="isim">
+                        <label for="isim">sim</label>
                     
-                    <input class="input-radio" type="radio" name="naoInput" id="inao">
-                    <label for="naoInput">não</label>
-                </div>
-
-                <select name="formatosTextos" id="formatosTextos">
-                    <option value="" selected>Selecione</option>
-                    <optgroup label="Formatos">
-                        <option value="">Narrativa escrita</option>
-                        <option value="">Pergunta direta</option>
-                        <option value="">Formato Estruturado por tópicos</option>
-                        <option value="">Formato de diálogo</option>
-                        <option value="">Formato de Comando</option>
-                        <option value="">Formato de Caso de Uso ou Cenário</option>
-                        <option value="">Formato Contínuo (Texto Corrido)</option>
-                        <option value="">Formato de Resumo</option>
-                        <option value="">Formato de Instrução Técnica</option>
-
-                    </optgroup>
-                </select>
-
+                        <input class="input-radio" type="radio" name="naoInput" id="inao">
+                        <label for="inao">não</label>
+                    </div>
+                    <select name="formatosTextos" id="formatosTextos">
+                        <option value="" selected>Selecione o formato</option>
+                        <optgroup label="Formatos">
+                            <option value="Narrativa escrita">Narrativa escrita</option>
+                            <option value="Pergunta direta">Pergunta direta</option>
+                            <option value="Formato Estruturado por tópicos">Formato Estruturado por tópicos</option>
+                            <option value="Formato de diálogo">Formato de diálogo</option>
+                            <option value="Formato de Comando">Formato de Comando</option>
+                            <option value="Formato de Caso de Uso ou Cenário">Formato de Caso de Uso ou Cenário</option>
+                            <option value="Formato Contínuo (Texto Corrido)">Formato Contínuo (Texto Corrido)</option>
+                            <option value="Formato de Resumo">Formato de Resumo</option>
+                            <option value="Formato de Instrução Técnica">Formato de Instrução Técnica</option>
+                        </optgroup>
+                    </select>
+                    <button>Enviar</button>
+                </form>
             </div>
-
-            <div class="questions">
-
-            </div>
-
         </div>
     </div>
 </body>
