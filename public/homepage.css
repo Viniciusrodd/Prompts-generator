@@ -24,8 +24,7 @@ div#filho{
     justify-content: flex-start;
     align-items: center;
     margin-top: 20px;
-    padding: 20px;
-    height: 70%;
+    padding: 40px 0px 40px 0px;
     width: 50%;
     background-color: aliceblue;
 }
@@ -35,15 +34,17 @@ div.questions{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    height: 50%;
+    padding: 20px;
     width: 50%;
     border: 3px solid black;
+    margin-top: 10px;
+    margin-bottom: 20PX;
 }
 
 h2{
     font-size: 18px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 div#inputsRadios{
@@ -51,9 +52,30 @@ div#inputsRadios{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
+label{
+    font-weight: bolder;
+}
+
+input{
+    cursor: pointer;
+}
+
+select{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid black;
+    border-radius: 10px;
+    height: 35px;
+    cursor: pointer;
+}
+
+
+
+/*
 .input-box{
     border-top: none;
     border-left: none;
@@ -63,6 +85,7 @@ div#inputsRadios{
     height: 30px;
     width: 60%;
 }
+*/
 
 input::placeholder{
     color: rgba(0, 0, 0, 0.491);
