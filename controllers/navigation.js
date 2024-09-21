@@ -17,6 +17,7 @@ router.post('/promptGenerator', (req, res) =>{
     var estilo = req.body.estilo;
     var preferencias = req.body.preferencias;
     var publicoAlvo = req.body.publicoAlvo;
+    var textRef = req.body.textRef;
 
 
     var prompt = `poderia fazer um texto com o FORMATO: ${formato}, 
@@ -31,7 +32,7 @@ router.post('/promptGenerator', (req, res) =>{
     uma PREFERÊNCIA que quero que ele NÃO POSSUA é: ${preferencias},
     e quero que o PÚBLICO ALVO desse texto seja: ${publicoAlvo}, entenda que é 
     importante que eu não perca nenhuma informação essencial sobre o tema abordado
-    nos titulos e subtitulos do texto:`
+    nos titulos e subtitulos do texto. texto REF: ${textRef}`
     
     if(formato == ''){
         res.render('./homepage')

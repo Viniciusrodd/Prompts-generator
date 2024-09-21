@@ -47,7 +47,7 @@
                     <h2>Qual o OBJETIVO do texto defina claramente oque quer alcançar</h2>
                     <p>Ex: "Escrever um resumo", "Criar uma história", "Fornecer uma explicação"</p>
 
-                    <input type="text" name="objectiveText" id="objectiveText" placeholder="Escreva seu objetivo aqui...">
+                    <input class="input-text" type="text" name="objectiveText" id="objectiveText" placeholder="Escreva seu objetivo aqui...">
                 </div>
 
 
@@ -78,7 +78,7 @@
                     <h2>Defina oque NÃO DEVE ser incluido</h2>
                     <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não ultrapasse 500 palavras"</p>
 
-                    <input type="text" name="objectiveText" id="objectiveText" placeholder="Escreva suas preferências aqui...">
+                    <input class="input-text" type="text" name="preferencias" id="preferencias" placeholder="Escreva suas preferências aqui...">
                 </div>
 
 
@@ -104,12 +104,28 @@
                 </div>
 
 
+
+                <div class="questions">
+                    <h2>Quer inserir um texto de referência ?</h2>
+                    <div id="inputsRadios">
+                        <input class="input-radio" type="radio" name="simInput2" id="isim2">
+                        <label for="isim">sim</label>
+                    
+                        <input class="input-radio" type="radio" name="naoInput2" id="inao2">
+                        <label for="inao">não</label>
+                    </div>
+
+                    <textarea name="textRef" id="textRef">
+
+                    </textarea>
+                </div>
+
+
     
-                <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
             </form>
-
-
         </div>
+        <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
+
     </div>
 </body>
 
