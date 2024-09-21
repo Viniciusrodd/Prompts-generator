@@ -128,7 +128,6 @@
     var btt = document.getElementById('btt-id');
     var form = document.getElementById('iform');
     
-
     btt.addEventListener('click', (event) =>{
         event.preventDefault();
 
@@ -139,41 +138,18 @@
 
         var formValid = true; //variavel de controle de preenchimento de campos
 
-        if(formatoTextos === ''){
-            window.alert(`Campo de (formato de textos) não preenchido. Preencha todos os campos, por favor!`)
-            formValid = false;
-            window.location.reload()
+        function validateFields(value, fieldName){
+            if(value === ''){
+                window.alert(`Campo de (${fieldName}) não preenchido. Preencha todos os campos, por favor!`);
+                formValid = false;
+            }
         }
 
-        if(estiloTextos === ''){
-            window.alert(`Campo de (estilo de textos) não preenchido. Preencha todos os campos, por favor!`)
-            formValid = false;
-            window.location.reload()
-        }
-
-        if(publicoAlvo === ''){
-            window.alert(`Campo de (público alvo) não preenchido. Preencha todos os campos, por favor!`)
-            formValid = false;
-            window.location.reload()
-        }
-
-        if(inputText === ''){
-            window.alert(`Campo de (input de texto) não preenchido. Preencha todos os campos, por favor!`)
-            formValid = false;
-            window.location.reload()
-        }
-
-        if(inputText[0].value === ''){
-            window.alert(`Campo de (objetivo) não preenchido. Preencha todos os campos, por favor!`)
-            formValid = false;
-            window.location.reload()
-        }
-
-        if(inputText[1].value === ''){
-            window.alert(`Campo de (preferências) não preenchido. Preencha todos os campos, por favor!`)
-            formValid = false;
-            window.location.reload()
-        }
+        validateFields(formatoTextos, 'Formato de texto');
+        validateFields(estiloTextos, 'Estilo de texto');
+        validateFields(publicoAlvo, 'Público alvo');
+        validateFields(inputText[0].value, 'Objetivo' );
+        validateFields(inputText[1].value, 'Preferências')
 
         if(formValid){
             form.submit();
