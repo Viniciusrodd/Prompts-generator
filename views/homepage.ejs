@@ -8,22 +8,23 @@
 </head>
 <body>
     <div id="pai">
-        <h1>Gerador de Prompts</h1>
+        <h1 id="titulo-principal">GERADOR DE PROMPTS</h1>
 
         <div id="filho">
             <form action="promptGenerator" method="post" id="iform">
-                <h2>ESCOLHA AS OPÇÕES DE PROMPTS</h2>
+                <h1 id="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
+
 
                 <div class="questions">
-                    <h2>Quer uma NOVA FORMATAÇÃO para um texto já existente ?</h2>
-                    
-                    <div id="inputsRadios">
-                        <input class="input-radio" type="radio" name="simInput" id="isim" required>
-                        <label for="isim">sim</label>
-                    
-                        <input class="input-radio" type="radio" name="naoInput" id="inao" required>
-                        <label for="inao">não</label>
-                    </div>
+                    <h2>Qual ASSUNTO o texto deve abordar?</h2>
+                    <p>Ex: "História do Brasil", "Politica", "Programação"</p>
+
+                    <input class="input-text" type="text" name="aboutText" id="aboutText" placeholder="Escreva o assunto aqui..." required>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Escolha uma FORMATAÇÃO de texto</h2>
 
                     <select name="formatosTextos" id="formatosTextos">
                         <option value="" selected>Selecione o formato</option>
@@ -44,7 +45,7 @@
 
 
                 <div class="questions">
-                    <h2>Qual o OBJETIVO do texto defina claramente oque quer alcançar</h2>
+                    <h2>Qual o OBJETIVO exato do texto ?</h2>
                     <p>Ex: "Escrever um resumo", "Criar uma história", "Fornecer uma explicação"</p>
 
                     <input class="input-text" type="text" name="objectiveText" id="objectiveText" placeholder="Escreva seu objetivo aqui..." required>
@@ -75,8 +76,8 @@
 
 
                 <div class="questions">
-                    <h2>Defina oque NÃO DEVE ser incluido</h2>
-                    <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não ultrapasse 500 palavras"</p>
+                    <h2>Defina oque NÃO DEVE ser incluido nele</h2>
+                    <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não deixe de mencionar referências"</p>
 
                     <input class="input-text" type="text" name="preferencias" id="preferencias" placeholder="Escreva suas preferências aqui..." required>
                 </div>
@@ -103,24 +104,28 @@
                     </select>
                 </div>
 
+
                 <div class="questions">
-                    <h2>Quer inserir um texto de referência ?</h2>
+                    <h2>Inserir um texto já existente?</h2>
+                    <h2>(opcional)</h2>
                     <div id="inputsRadios">
-                        <input class="input-radio" type="radio" name="simInput2" id="isim2" required>
+                        <input class="input-radio" type="radio" name="resposta2" id="isim2" required>
                         <label for="isim">sim</label>
                     
-                        <input class="input-radio" type="radio" name="naoInput2" id="inao2" required>
+                        <input class="input-radio" type="radio" name="resposta2" id="inao2" required>
                         <label for="inao">não</label>
                     </div>
 
                     <textarea name="textRef" id="textRef">
 
                     </textarea>
-                </div>    
-            </form>
-        </div>
+                </div>
 
-        <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->
+
+
+                <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
+            </form>
+        </div>    
     </div>
 </body>
 
