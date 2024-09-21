@@ -33,7 +33,7 @@ router.post('/promptGenerator', (req, res) =>{
     e quero que o PÚBLICO ALVO desse texto seja: ${publicoAlvo}, entenda que é 
     importante que eu não perca nenhuma informação essencial sobre o tema abordado
     nos titulos e subtitulos do texto. texto REF: ${textRef}`
-    
+
     if(formato == ''){
         res.render('./homepage')
     }else{

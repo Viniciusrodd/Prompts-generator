@@ -18,10 +18,10 @@
                     <h2>Quer uma NOVA FORMATAÇÃO para um texto já existente ?</h2>
                     
                     <div id="inputsRadios">
-                        <input class="input-radio" type="radio" name="simInput" id="isim">
+                        <input class="input-radio" type="radio" name="simInput" id="isim" required>
                         <label for="isim">sim</label>
                     
-                        <input class="input-radio" type="radio" name="naoInput" id="inao">
+                        <input class="input-radio" type="radio" name="naoInput" id="inao" required>
                         <label for="inao">não</label>
                     </div>
 
@@ -47,7 +47,7 @@
                     <h2>Qual o OBJETIVO do texto defina claramente oque quer alcançar</h2>
                     <p>Ex: "Escrever um resumo", "Criar uma história", "Fornecer uma explicação"</p>
 
-                    <input class="input-text" type="text" name="objectiveText" id="objectiveText" placeholder="Escreva seu objetivo aqui...">
+                    <input class="input-text" type="text" name="objectiveText" id="objectiveText" placeholder="Escreva seu objetivo aqui..." required>
                 </div>
 
 
@@ -78,7 +78,7 @@
                     <h2>Defina oque NÃO DEVE ser incluido</h2>
                     <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não ultrapasse 500 palavras"</p>
 
-                    <input class="input-text" type="text" name="preferencias" id="preferencias" placeholder="Escreva suas preferências aqui...">
+                    <input class="input-text" type="text" name="preferencias" id="preferencias" placeholder="Escreva suas preferências aqui..." required>
                 </div>
 
 
@@ -103,47 +103,82 @@
                     </select>
                 </div>
 
-
-
                 <div class="questions">
                     <h2>Quer inserir um texto de referência ?</h2>
                     <div id="inputsRadios">
-                        <input class="input-radio" type="radio" name="simInput2" id="isim2">
+                        <input class="input-radio" type="radio" name="simInput2" id="isim2" required>
                         <label for="isim">sim</label>
                     
-                        <input class="input-radio" type="radio" name="naoInput2" id="inao2">
+                        <input class="input-radio" type="radio" name="naoInput2" id="inao2" required>
                         <label for="inao">não</label>
                     </div>
 
                     <textarea name="textRef" id="textRef">
 
                     </textarea>
-                </div>
-
-
-    
+                </div>    
             </form>
         </div>
-        <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
 
+        <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->
     </div>
 </body>
 
 <script>
-    var btt = document.getElementById('btt-id')
-    var form = document.getElementById('iform')
+    var btt = document.getElementById('btt-id');
+    var form = document.getElementById('iform');
     
 
-    btt.addEventListener('click', () =>{
-        var formatoTextos = document.getElementById('formatosTextos').value;        
-        var simBtt = document.getElementById('isim').value;        
-        var naoBtt = document.getElementById('inao').value;        
+    btt.addEventListener('click', (event) =>{
+        event.preventDefault();
+
+        var formatoTextos = document.getElementById('formatosTextos').value;
+        var estiloTextos = document.getElementById('estilo').value;
+        var publicoAlvo = document.getElementById('publicoAlvo').value;
+        var inputText = document.getElementsByClassName('input-text');
+
+        var formValid = true; //variavel de controle de preenchimento de campos
 
         if(formatoTextos === ''){
-            window.alert(`Campo ${formatoTextos} não preenchido. Preencha todos os campos, por favor!`)
-        }else{
-            form.submit()
+            window.alert(`Campo de (formato de textos) não preenchido. Preencha todos os campos, por favor!`)
+            formValid = false;
+            window.location.reload()
         }
+
+        if(estiloTextos === ''){
+            window.alert(`Campo de (estilo de textos) não preenchido. Preencha todos os campos, por favor!`)
+            formValid = false;
+            window.location.reload()
+        }
+
+        if(publicoAlvo === ''){
+            window.alert(`Campo de (público alvo) não preenchido. Preencha todos os campos, por favor!`)
+            formValid = false;
+            window.location.reload()
+        }
+
+        if(inputText === ''){
+            window.alert(`Campo de (input de texto) não preenchido. Preencha todos os campos, por favor!`)
+            formValid = false;
+            window.location.reload()
+        }
+
+        if(inputText[0].value === ''){
+            window.alert(`Campo de (objetivo) não preenchido. Preencha todos os campos, por favor!`)
+            formValid = false;
+            window.location.reload()
+        }
+
+        if(inputText[1].value === ''){
+            window.alert(`Campo de (preferências) não preenchido. Preencha todos os campos, por favor!`)
+            formValid = false;
+            window.location.reload()
+        }
+
+        if(formValid){
+            form.submit();
+        }
+
     })
 
 </script>
