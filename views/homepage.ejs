@@ -11,12 +11,12 @@
         <h1>Gerador de Prompts</h1>
 
         <div id="filho">
-            <h2>ESCOLHA AS OPÇÕES DE PROMPTS</h2>
+            <form action="promptGenerator" method="post" id="iform">
+                <h2>ESCOLHA AS OPÇÕES DE PROMPTS</h2>
 
-            <div class="questions">
-                <h2>Quer uma NOVA FORMATAÇÃO para um texto já existente ?</h2>
-
-                <form action="promptGenerator" method="post" id="iform">
+                <div class="questions">
+                    <h2>Quer uma NOVA FORMATAÇÃO para um texto já existente ?</h2>
+                    
                     <div id="inputsRadios">
                         <input class="input-radio" type="radio" name="simInput" id="isim">
                         <label for="isim">sim</label>
@@ -38,10 +38,80 @@
                             <option value="Formato de Resumo">Formato de Resumo</option>
                             <option value="Formato de Instrução Técnica">Formato de Instrução Técnica</option>
                         </optgroup>
+                    </select>               
+                </div>
+
+
+
+                <div class="questions">
+                    <h2>Qual o OBJETIVO do texto defina claramente oque quer alcançar</h2>
+                    <p>Ex: "Escrever um resumo", "Criar uma história", "Fornecer uma explicação"</p>
+                    <textarea name="objectiveText" id="objectiveText" ">
+    
+                    </textarea>
+                </div>
+
+
+                
+                <div class="questions">
+                    <h2>Especifique o ESTILO desejado para o texto</h2>
+                    <select name="estilo" id="estilo">
+                        <option value="" selected>Selecione o estilo</option>
+                        <optgroup label="Estilos">
+                            <option value="De forma concisa">De forma concisa</option>
+                            <option value="Com humor">Com humor</option>
+                            <option value="Em tom formal">Em tom formal</option>
+                            <option value="Em tom informal">Em tom informal</option>
+                            <option value="De forma persuasiva">De forma persuasiva</option>
+                            <option value="Em tom motivacional">Em tom motivacional</option>
+                            <option value="Em tom descritivo">Em tom descritivo</option>
+                            <option value="Em tom acadêmico">Em tom acadêmico</option>
+                            <option value="De forma poética">De forma poética</option>
+                            <option value="Em estilo jornalístico">Em estilo jornalístico</option>
+                            <option value="Em formato narrativo">Em formato narrativo</option>
+                            <option value="Com foco técnico">Com foco técnico</option>
+                        </optgroup>
                     </select>
-                    <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->
-                </form>
-            </div>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Defina oque NÃO DEVE ser incluido</h2>
+                    <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não ultrapasse 500 palavras"</p>
+
+                    <textarea name="oquenaoter" id="oquenaoter">
+
+                    </textarea>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Indique PARA QUEM o texto é direcionado</h2>
+                    <select name="publicoAlvo" id="publicoAlvo">
+                        <option value="" selected>Selecione o publico</option>
+                        <optgroup label="publicoAlvo">
+                            <option value="Para adolescentes">Para adolescentes</option>
+                            <option value="Para profissionais de tecnologia">Para profissionais de tecnologia</option>
+                            <option value="Para profissionais do marketing">Para profissionais do marketing</option>
+                            <option value="Para um público geral">Para um público geral</option>
+                            <option value="Para crianças">Para crianças</option>
+                            <option value="Para estudantes universitários">Para estudantes universitários</option>
+                            <option value="Para empreendedores">Para empreendedores</option>
+                            <option value="Para executivos">Para executivos</option>
+                            <option value="Para aposentados">Para aposentados</option>
+                            <option value="Para especialistas em saúde">Para especialistas em saúde</option>
+                            <option value="Para gamers">Para gamers</option>
+                            <option value="Para pesquisadores acadêmicos">Para pesquisadores acadêmicos</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+    
+                <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
+            </form>
+
+
         </div>
     </div>
 </body>
@@ -62,6 +132,7 @@
             form.submit()
         }
     })
+
 </script>
 
 </html>
