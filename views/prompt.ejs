@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resposta com Prompt</title>
+    <link rel="stylesheet" href="/prompt.css">
 </head>
 <body>
-    
-    <p>Eis aqui seu prompt:</p> <br>
-    <p><%= formatoVar %></p>
+    <div id="pai">
+        <h1 id="titulo-principal">Seu Prompt gerado:</h1>
 
-    <a href="/homepage">
-        <button>Voltar a homepage</button>
-    </a>
+        <div id="filho">
+            <p id="p-prompt">
+                <%= formatoVar %>
+            </p>
+
+            <button id="btt-id">
+                <a href="/homepage">Voltar a homepage</a>
+            </button>
+        </div>
+
+    </div>
 
 </body>
 </html>
