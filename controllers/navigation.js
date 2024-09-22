@@ -12,28 +12,28 @@ router.get('/homepage', (req, res) =>{
 
 
 router.post('/promptGenerator', (req, res) =>{
-    var assunto = req.body.aboutText;
-    var formato = req.body.formatosTextos;
-    var objetivo = req.body.objectiveText;
-    var estilo = req.body.estilo;
-    var preferencias = req.body.preferencias;
-    var publicoAlvo = req.body.publicoAlvo;
-    var textRef = req.body.textRef;
+    var assunto = req.body.aboutText.toUpperCase();
+    var formato = req.body.formatosTextos.toUpperCase();
+    var objetivo = req.body.objectiveText.toUpperCase();
+    var estilo = req.body.estilo.toUpperCase();
+    var preferencias = req.body.preferencias.toUpperCase();
+    var publicoAlvo = req.body.publicoAlvo.toUpperCase();
+    var textRef = req.body.textRef.toUpperCase();
 
 
     var prompt = `poderia me construir um texto sobre ${assunto} 
-    com o FORMATO: ${formato}, ressaltando seus pontos mais importantes, 
+    com o formato: ${formato}, ressaltando seus pontos mais importantes, 
     minuncias, e detalhes especificos sobre esses pontos, com
     significado de siglas e termos, menções sobre algo 
     ou alguém, datas mencionadas, se houver referência de figuras deixe 
     uma sinalização de sua recomendação na parte do texto em questão, 
     afim que eu apenas compreenda melhor o conteúdo. 
-    Este é o OBJETIVO desse texto: ${objetivo}, seu ESTILO de elaboração 
-    desse deve ser: ${estilo}, e também uma PREFERÊNCIA pessoal que quero 
-    que ele NÃO POSSUA é: ${preferencias}, além disso desejo
-    que o PÚBLICO ALVO desse texto seja: ${publicoAlvo}, entenda que é 
+    Este é o objetivo desse texto: ${objetivo}, seu estilo de elaboração 
+    desse deve ser: ${estilo}, e também uma preferência pessoal que quero 
+    que ele não possua é: ${preferencias}, além disso desejo
+    que o público alvo desse texto seja: ${publicoAlvo}, entenda que é 
     importante que eu não perca nenhuma informação essencial sobre o tema abordado
-    nos titulos e subtitulos do texto. Um possível texto como REFERÊNCIA: 
+    nos titulos e subtitulos do texto. Um possível texto como referência: 
     ${textRef}`
 
     if(formato == ''){

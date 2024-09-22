@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
     <link rel="stylesheet" href="/homepage.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div id="pai">
@@ -17,6 +18,7 @@
 
                 <div class="questions">
                     <h2>Qual ASSUNTO o texto deve abordar?</h2>
+                    <i class="material-icons">article</i>
                     <p>Ex: "História do Brasil", "Politica", "Programação"</p>
 
                     <input class="input-text" type="text" name="aboutText" id="aboutText" placeholder="Escreva o assunto aqui..." required>
@@ -25,6 +27,7 @@
 
                 <div class="questions">
                     <h2>Escolha uma FORMATAÇÃO de texto</h2>
+                    <i class="material-icons">grid_view</i>
 
                     <select name="formatosTextos" id="formatosTextos">
                         <option value="" selected>Selecione o formato</option>
@@ -32,12 +35,12 @@
                             <option value="Narrativa escrita">Narrativa escrita</option>
                             <option value="Pergunta direta">Pergunta direta</option>
                             <option value="Formato Estruturado por tópicos">Formato Estruturado por tópicos</option>
-                            <option value="Formato de diálogo">Formato de diálogo</option>
-                            <option value="Formato de Comando">Formato de Comando</option>
-                            <option value="Formato de Caso de Uso ou Cenário">Formato de Caso de Uso ou Cenário</option>
-                            <option value="Formato Contínuo (Texto Corrido)">Formato Contínuo (Texto Corrido)</option>
-                            <option value="Formato de Resumo">Formato de Resumo</option>
-                            <option value="Formato de Instrução Técnica">Formato de Instrução Técnica</option>
+                            <option value="Formato de diálogo">De diálogo</option>
+                            <option value="Formato de Comando">De Comando</option>
+                            <option value="Formato de Caso de Uso ou Cenário">De Caso de Uso ou Cenário</option>
+                            <option value="Formato Contínuo (Texto Corrido)">Contínuo (Texto Corrido)</option>
+                            <option value="Formato de Resumo">De Resumo</option>
+                            <option value="Formato de Instrução Técnica">De Instrução Técnica</option>
                         </optgroup>
                     </select>               
                 </div>
@@ -46,6 +49,7 @@
 
                 <div class="questions">
                     <h2>Qual o OBJETIVO exato do texto ?</h2>
+                    <i class="material-icons">check</i>
                     <p>Ex: "Escrever um resumo", "Criar uma história", "Fornecer uma explicação"</p>
 
                     <input class="input-text" type="text" name="objectiveText" id="objectiveText" placeholder="Escreva seu objetivo aqui..." required>
@@ -55,6 +59,7 @@
                 
                 <div class="questions">
                     <h2>Especifique o ESTILO desejado para o texto</h2>
+                    <i class="material-icons">palette</i>
                     <select name="estilo" id="estilo">
                         <option value="" selected>Selecione o estilo</option>
                         <optgroup label="Estilos">
@@ -77,6 +82,7 @@
 
                 <div class="questions">
                     <h2>Defina oque NÃO DEVE ser incluido nele</h2>
+                    <i class="material-icons">close</i>
                     <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não deixe de mencionar referências"</p>
 
                     <input class="input-text" type="text" name="preferencias" id="preferencias" placeholder="Escreva suas preferências aqui..." required>
@@ -85,6 +91,7 @@
 
                 <div class="questions">
                     <h2>Indique PARA QUEM o texto é direcionado</h2>
+                    <i class="material-icons">person</i>
                     <select name="publicoAlvo" id="publicoAlvo">
                         <option value="" selected>Selecione o publico</option>
                         <optgroup label="publicoAlvo">
@@ -106,8 +113,9 @@
 
 
                 <div class="questions">
+                    <h3>(opcional)</h3>
                     <h2>Inserir um texto já existente?</h2>
-                    <h2>(opcional)</h2>
+                    <i class="material-icons">content_copy</i>
                     <div id="inputsRadios">
                         <input class="input-radio" type="radio" name="resposta2" id="isim2" required>
                         <label for="isim">sim</label>
