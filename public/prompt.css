@@ -50,15 +50,20 @@ div#filho{
     background-image: linear-gradient(to right, #0269a900, #0269a97a, #0269a900);
 }
 
-#p1{
+#btt{
     font-size: 22px;
     color: white;
-    padding: 5px;
+    border: 2px solid white;
+    padding: 10px;
     border-radius: 5px;
     background-color: black;
-    font-style: italic;
-    letter-spacing: 1px;
-    margin: 0px 10px 5px 0px;
+    margin: 0px 0px 15px 0px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+#btt:hover{
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.563);
 }
 
 #p-prompt{

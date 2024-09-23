@@ -29,8 +29,8 @@ router.post('/promptGenerator', (req, res) =>{
     uma sinalização de sua recomendação na parte do texto em questão, 
     afim que eu apenas compreenda melhor o conteúdo. 
     Este é o objetivo desse texto: ${objetivo}, seu estilo de elaboração 
-    desse deve ser: ${estilo}, e também uma preferência pessoal que quero 
-    que ele não possua é: ${preferencias}, além disso desejo
+    deve ser: ${estilo}, e também como preferência pessoal, não quero 
+    que o texto tenha: ${preferencias}, e além disso desejo
     que o público alvo desse texto seja: ${publicoAlvo}, entenda que é 
     importante que eu não perca nenhuma informação essencial sobre o tema abordado
     nos titulos e subtitulos do texto. Um possível texto como referência: 

@@ -9,13 +9,13 @@
 </head>
 <body>
     <div id="pai">
-        <h1 id="titulo-principal">Seu Prompt gerado:</h1>
+        <h1 id="titulo-principal">Prompt gerado</h1>
 
         <div id="filho">
-            <p id="p1">
+            <button id="btt">
                 Copie e Cole
                 <i class="material-icons">content_copy</i>
-            </p>
+            </button>
             <p id="p-prompt">
                 <%= formatoVar %>
             </p>
@@ -28,4 +28,25 @@
     </div>
 
 </body>
+
+<script>
+
+    //lógica para copiar texto para área de transferência
+    var btt = document.getElementById('btt');
+
+    btt.addEventListener('click', () =>{
+        var text = document.getElementById('p-prompt').innerText;
+        
+        navigator.clipboard.writeText(text)
+            .then(() =>{
+                alert('Prompt COPIADO para área de transferência!');
+            })
+            .catch((error) =>{
+                console.log(`Erro ao copiar texto ${error}`);
+            })
+    })
+
+</script>
+
+
 </html>
