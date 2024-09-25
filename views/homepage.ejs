@@ -143,7 +143,7 @@
     var btt = document.getElementById('btt-id');
     var form = document.getElementById('iform');
     
-    btt.addEventListener('click', (event) =>{
+    btt.addEventListener('click', (event) => {
         event.preventDefault();
 
         var assuntoTexto = document.getElementById('aboutText').value;
@@ -151,33 +151,36 @@
         var estiloTextos = document.getElementById('estilo').value;
         var publicoAlvo = document.getElementById('publicoAlvo').value;
         var inputText = document.getElementsByClassName('input-text');
-
         
+        var formValid = true
+        var errors = []; // Array para armazenar mensagens de erro
 
         function validateFields(value, fieldName){
             if(value === ''){
-                Swal.fire({
-                    title: 'Erro!',
-                    text: `Preencha o campo de ${fieldName} para prosseguir!`,
-                    icon: 'error', // Outros ícones: 'error', 'warning', 'info', 'question'
-                    confirmButtonText: 'Ok' // Texto do botão de confirmação
-                });
+                errors.push(`Campo: <ins>${fieldName}</ins> não preenchido!`);
                 formValid = false;
             }
         }
 
-        validateFields(assuntoTexto, 'Assunto do texto')
+        validateFields(assuntoTexto, 'Assunto do texto');
         validateFields(formatoTextos, 'Formato de texto');
         validateFields(estiloTextos, 'Estilo de texto');
         validateFields(publicoAlvo, 'Público alvo');
-        validateFields(inputText[0].value, 'Objetivo' );
-        validateFields(inputText[1].value, 'Preferências')
+        validateFields(inputText[1].value, 'Objetivo');
+        validateFields(inputText[2].value, 'Preferências');
 
-        if(formValid){
+        if (!formValid) {
+            // Exibir as mensagens de erro em um único alerta com quebras de linha
+            Swal.fire({
+                title: 'Erro!',
+                html: errors.join('<br>'), // Junta mensagens com <br> para quebras de linha
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+        } else {
             form.submit();
         }
-
-    })
+    });
 
 </script>
 
