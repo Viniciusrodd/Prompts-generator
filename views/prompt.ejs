@@ -6,6 +6,8 @@
     <title>Resposta com Prompt</title>
     <link rel="stylesheet" href="/prompt.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div id="pai">
@@ -39,7 +41,12 @@
         
         navigator.clipboard.writeText(text)
             .then(() =>{
-                alert('Prompt COPIADO para área de transferência!');
+                Swal.fire({
+                    title: 'Sucesso!',
+                    text: 'Prompt COPIADO para área de transferência!',
+                    icon: 'success', // Outros ícones: 'error', 'warning', 'info', 'question'
+                    confirmButtonText: 'Ok' // Texto do botão de confirmação
+                });
             })
             .catch((error) =>{
                 console.log(`Erro ao copiar texto ${error}`);
