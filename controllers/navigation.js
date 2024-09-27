@@ -21,7 +21,7 @@ router.post('/promptGenerator', (req, res) =>{
     var textRef = req.body.textRef.toUpperCase();
 
 
-    var prompt = `poderia me construir um texto sobre ${assunto} 
+    var prompt = `poderia me construir um texto sobre este assunto: ${assunto} 
     com o formato: ${formato}, ressaltando seus pontos mais importantes, 
     minuncias, e detalhes especificos sobre esses pontos, com
     significado de siglas e termos, menções sobre algo 
@@ -29,9 +29,9 @@ router.post('/promptGenerator', (req, res) =>{
     uma sinalização de sua recomendação na parte do texto em questão, 
     afim que eu apenas compreenda melhor o conteúdo. 
     Este é o objetivo desse texto: ${objetivo}, seu estilo de elaboração 
-    deve ser: ${estilo}, e também como preferência pessoal, não quero 
-    que o texto tenha: ${preferencias}, e além disso desejo
-    que o público alvo desse texto seja: ${publicoAlvo}, entenda que é 
+    deve ser: ${estilo}, e também como preferência pessoal, 
+    ${preferencias}, e além disso desejo que o público alvo
+    desse texto seja: ${publicoAlvo}, entenda que é 
     importante que eu não perca nenhuma informação essencial sobre o tema abordado
     nos titulos e subtitulos do texto. Um possível texto como referência: 
     ${textRef}`
