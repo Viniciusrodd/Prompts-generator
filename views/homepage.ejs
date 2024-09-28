@@ -254,6 +254,9 @@
         var estiloTextos = document.getElementById('estilo').value;
         var publicoAlvo = document.getElementById('publicoAlvo').value;
         var inputText = document.getElementsByClassName('input-text');
+        var detalhamentoText = document.getElementById('detalhamento').value;
+        var exemplosText = document.getElementById('exemplos').value;
+        var FigurasDiagrmasText = document.getElementById('FigurasDiagrmas').value;
         
         var formValid = true
         var errors = []; // Array para armazenar mensagens de erro
@@ -266,11 +269,14 @@
         }
 
         validateFields(assuntoTexto, 'Assunto do texto');
+        validateFields(detalhamentoText, 'Detalhamento');
         validateFields(formatoTextos, 'Formato de texto');
-        validateFields(estiloTextos, 'Estilo de texto');
-        validateFields(publicoAlvo, 'Público alvo');
         validateFields(inputText[1].value, 'Objetivo');
+        validateFields(estiloTextos, 'Estilo de texto');
+        validateFields(exemplosText, 'Exemplos');
+        validateFields(FigurasDiagrmasText, 'Figuras e diagramas');
         validateFields(inputText[2].value, 'Preferências');
+        validateFields(publicoAlvo, 'Público alvo');
 
         if (!formValid) {
             // Exibir as mensagens de erro em um único alerta com quebras de linha
