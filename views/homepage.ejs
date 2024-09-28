@@ -11,9 +11,17 @@
 </head>
 <body>
     <div id="pai">
-        <h1 id="titulo-principal">GERADOR DE PROMPTS</h1>
+        <h1 id="titulo-principal">GERE SEU PROMPT</h1>
 
-        <div id="filho">
+        <div id="div-btt">
+            <button class="btt" id="gerar-texto-btt">Gerar um texto do zero</button>
+            <button class="btt">Modificar um texto existente</button>
+        </div>
+
+        <div id="texto-gerado">
+            <div id="preenchimento">
+
+            </div>
             <form action="promptGenerator" method="post" id="iform">
                 <h1 id="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
 
@@ -133,7 +141,7 @@
 
 
 
-                <button id="btt-id" type="button">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
+                <button class="btt" type="button" id="btt-id">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
             </form>
         </div>    
     </div>
@@ -142,6 +150,18 @@
 <script>
     var btt = document.getElementById('btt-id');
     var form = document.getElementById('iform');
+
+    var gerarTextoBtt = document.getElementById('gerar-texto-btt');
+
+    gerarTextoBtt.addEventListener('click', () =>{
+        form.style.display = 'flex';
+        // Use requestAnimationFrame para garantir que o navegador tenha tempo de renderizar
+        requestAnimationFrame(() => {
+            var divPreenchimento = document.getElementById('preenchimento');
+            divPreenchimento.style.display = 'none'
+            form.classList.add('show'); // Adiciona a classe show para animação
+        });
+    })
     
     btt.addEventListener('click', (event) => {
         event.preventDefault();
