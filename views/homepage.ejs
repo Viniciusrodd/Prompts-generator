@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="pai">
-        <h1 id="titulo-principal">GERE SEU PROMPT</h1>
+        <h1 id="titulo-principal"><a href="/homepage">GERE SEU PROMPT</a></h1>
 
         <div id="div-btt">
             <button class="btt" id="gerar-texto-btt">Gerar um texto do zero</button>
@@ -174,14 +174,18 @@
     var gerarTextoBtt = document.getElementById('gerar-texto-btt');
     var modificarTextoBtt = document.getElementById('modificar-texto-btt');
 
+
     gerarTextoBtt.addEventListener('click', () =>{
         form.style.display = 'flex';
         // Use requestAnimationFrame para garantir que o navegador tenha tempo de renderizar
         requestAnimationFrame(() => {
             var divPreenchimento = document.getElementById('preenchimento');
+            var divButtons = document.getElementById('div-btt');
+           
             divPreenchimento.style.display = 'none'
             modificarTextoBtt.style.display = 'none'
             gerarTextoBtt.style.display = 'none'
+            divButtons.style.display = 'none'
 
             form.classList.add('show');
         });
@@ -193,9 +197,12 @@
 
         requestAnimationFrame(() => {
             var divPreenchimento = document.getElementById('preenchimento');
+            var divButtons = document.getElementById('div-btt');
+
             divPreenchimento.style.display = 'none'
             modificarTextoBtt.style.display = 'none'
             gerarTextoBtt.style.display = 'none'
+            divButtons.style.display = 'none'
 
             form2.classList.add('show');
         })

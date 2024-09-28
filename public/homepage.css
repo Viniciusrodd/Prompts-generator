@@ -34,6 +34,15 @@ h1#titulo-principal{
     padding: 10px;
     border-radius: 10px;
     background-color: black;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+#titulo-principal:hover{
+    transform: scale(1.05);
+}
+
+a{
+    color: white;
+    text-decoration: none;
 }
 
 .h1-prompts{
@@ -73,18 +82,11 @@ div#texto-gerado{
     background-image: linear-gradient(to right, #0269a900, #0269a97a, #0269a900);
 }
 
-iform2{
-    display: none;
-    opacity: 0; /* Começa invisível */
-    transform: translateY(-20px); /* Começa ligeiramente acima */
-    transition: opacity 0.8s ease, transform 0.8s ease; /* Define a animação */
-}
-
 form{
     display: none;
     opacity: 0; /* Começa invisível */
     transform: translateY(-20px); /* Começa ligeiramente acima */
-    transition: opacity 0.8s ease, transform 0.8s ease; /* Define a animação */
+    transition: opacity 1.0s ease, transform 1.0s ease; /* Define a animação */
 }
 .show{
     display: flex;
