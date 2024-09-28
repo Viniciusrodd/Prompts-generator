@@ -12,12 +12,40 @@ router.get('/homepage', (req, res) =>{
 
 
 router.post('/promptGeneratorModify', (req, res) =>{
-    var textModify = req.body.textModify.toUpperCase();
-    var campos2 = { textModify }
+    var textRef = req.body.textModify.toUpperCase();
+    var detalhamento = req.body.detalhamento.toUpperCase();
+    var formato = req.body.formatosTextos.toUpperCase();
+    var objetivo = req.body.objectiveText.toUpperCase();
+    var estilo = req.body.estilo.toUpperCase();
+    var figurasDiagramas = req.body.FigurasDiagramas.toUpperCase();
+    var publicoAlvo = req.body.publicoAlvo.toUpperCase();
 
-    var prompt2 = `Aqui ta seu texto ref gerado ${textModify}`
+    var campos = { 
+        textRef, 
+        formato, 
+        objetivo, 
+        estilo, 
+        publicoAlvo, 
+        detalhamento,
+        figurasDiagramas
+    }
 
-    if(campos2 === ''){
+    var prompt2 = `
+    Olá, tenho o seguinte texto referência: ${textRef}.
+    Gostaria de adaptá-lo, e para isso, quero personalizar da seguinte forma:
+
+    - Formato do texto: ${formato}.
+    - Nível de detalhamento: ${detalhamento}.
+    - O objetivo é: ${objetivo}.
+    - Estilo de escrita preferido: ${estilo}.
+    - Público-alvo para essa versão: ${publicoAlvo}.
+    - Me seria muito útil ter: ${figurasDiagramas}.
+    
+    É essencial que nenhuma informação importante seja perdida nos títulos e subtítulos, 
+    e que o texto final seja adaptado de acordo com as preferências mencionadas acima.
+    `.trim();
+
+    if(campos === ''){
         res.render('./homepage')
     }else{
         res.render('./prompt', {
@@ -27,29 +55,41 @@ router.post('/promptGeneratorModify', (req, res) =>{
 })
 
 
+
+
 router.post('/promptGenerator', (req, res) =>{
     var assunto = req.body.aboutText.toUpperCase();
+    var detalhamento = req.body.detalhamento.toUpperCase();
     var formato = req.body.formatosTextos.toUpperCase();
     var objetivo = req.body.objectiveText.toUpperCase();
     var estilo = req.body.estilo.toUpperCase();
+    var exemplos = req.body.exemplos.toUpperCase();
+    var figurasDiagramas = req.body.FigurasDiagramas.toUpperCase();
     var preferencias = req.body.preferencias.toUpperCase();
     var publicoAlvo = req.body.publicoAlvo.toUpperCase();
 
-    var campos = { assunto, formato, objetivo, estilo, preferencias, publicoAlvo }
+    var campos = { 
+        assunto, 
+        formato, 
+        objetivo, 
+        estilo, 
+        preferencias, 
+        publicoAlvo, 
+        detalhamento,
+        exemplos,
+        figurasDiagramas
+    }
 
-    var prompt = `poderia me construir um texto sobre este assunto: ${assunto} 
-    com o formato: ${formato}, ressaltando seus pontos mais importantes, 
-    minuncias, e detalhes especificos sobre esses pontos, com
-    significado de siglas e termos, menções sobre algo 
-    ou alguém, datas mencionadas, se houver referência de figuras deixe 
-    uma sinalização de sua recomendação na parte do texto em questão, 
-    afim que eu apenas compreenda melhor o conteúdo. 
-    Este é o objetivo desse texto: ${objetivo}, seu estilo de elaboração 
-    deve ser: ${estilo}, e também como preferência pessoal, 
-    ${preferencias}, e além disso desejo que o público alvo
-    desse texto seja: ${publicoAlvo}, entenda que é 
-    importante que eu não perca nenhuma informação essencial sobre o tema abordado
-    nos titulos e subtitulos do texto. Um possível texto como referência: ${textRef}`
+    var prompt = `
+    Poderia criar um texto sobre o seguinte tema: ${assunto}Gostaria que ele 
+    fosse estruturado no formato: ${formato}, com um nível de detalhamento: 
+    ${detalhamento}. Para tornar o conteúdo mais claro, seria ótimo incluir: ${exemplos}. 
+    Me seria muito útil ter: ${figurasDiagramas}, caso necessário. 
+    O objetivo principal do texto é: ${objetivo}, e o estilo de escrita deve ser: ${estilo}. 
+    Além disso, como preferência pessoal, eu gostaria de: ${preferencias}. 
+    Não se esqueça de que o público-alvo para esse texto será: ${publicoAlvo}. 
+    É fundamental que nenhuma informação essencial sobre o tema seja 
+    perdida nos títulos e subtítulos.`
 
     if(campos === ''){
         res.render('./homepage')

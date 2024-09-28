@@ -32,34 +32,19 @@
                 </p>
             </div>
 
-            <form action="promptGeneratorModify" method="post" id="iform2">
+
+
+
+            <form action="promptGeneratorModify" method="post" id="iform">
                 <h1 class="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
 
                 <div class="questions">
                     <h2>Qual texto deseja modificar?</h2>
                     <i class="material-icons">article</i>
 
-                    <textarea name="textModify" id="textRef2">
+                    <textarea name="textModify" id="textRef">
 
                     </textarea>
-                </div>
-
-                <button class="btt" type="button" id="btt-id2">
-                    Enviar
-                </button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->
-            </form>
-
-
-
-            <form action="promptGenerator" method="post" id="iform">
-                <h1 class="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
-
-                <div class="questions">
-                    <h2>Qual ASSUNTO o texto deve abordar?</h2>
-                    <i class="material-icons">article</i>
-                    <p>Ex: "História do Brasil", "Politica", "Programação"</p>
-
-                    <input class="input-text" type="text" name="aboutText" id="aboutText" placeholder="Escreva o assunto aqui..." required>
                 </div>
 
 
@@ -133,41 +118,17 @@
                     </select>
                 </div>
 
-
-                <div class="questions">
-                    <h2>Inclusão de EXEMPLOS</h2>
-                    <i class="material-icons">person</i>
-                    <select name="exemplos" id="exemplos">
-                        <option value="" selected>Selecione exemplos</option>
-                        <optgroup label="Exemplos">
-                            <option value="Incluir exemplos práticos">Incluir exemplos práticos</option>
-                            <option value="Explicação teórica sem exemplos">Explicação teórica sem exemplos</option>
-                            <option value="Explicação com analogias">Explicação com analogias</option>
-                        </optgroup>
-                    </select>
-                </div>
-
-
                 <div class="questions">
                     <h2>Uso de FIGURAS e DIAGRAMAS</h2>
                     <i class="material-icons">grid_view</i>
 
-                    <select name="FigurasDiagrmas" id="FigurasDiagrmas">
+                    <select name="FigurasDiagramas" id="FigurasDiagramas">
                         <option value="" selected>Figuras e diagramas</option>
                         <optgroup label="Figuras e diagramas">
-                            <option value="Inserir sinalização de figuras/diagramas">Inserir sinalização de figuras/diagramas</option>
+                            <option value="Sinalização de figuras/diagramas">Sinalização de figuras/diagramas</option>
                             <option value="Somente texto">Somente texto</option>
                         </optgroup>
                     </select>
-                </div>
-
-
-                <div class="questions">
-                    <h2>Defina oque NÃO DEVE ser incluido nele</h2>
-                    <i class="material-icons">close</i>
-                    <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não deixe de mencionar referências"</p>
-
-                    <input class="input-text" type="text" name="preferencias" id="preferencias" required value="Não inclua: ">
                 </div>
 
 
@@ -193,8 +154,159 @@
                     </select>
                 </div>
 
-
                 <button class="btt" type="button" id="btt-id">
+                    Enviar
+                </button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->
+            </form>
+
+
+
+
+
+            <form action="promptGenerator" method="post" id="iform2">
+                <h1 class="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
+
+                <div class="questions">
+                    <h2>Qual ASSUNTO o texto deve abordar?</h2>
+                    <i class="material-icons">article</i>
+                    <p>Ex: "História do Brasil", "Politica", "Programação"</p>
+
+                    <input class="input-text" type="text" name="aboutText" id="aboutText2" placeholder="Escreva o assunto aqui..." required>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Escolha o NIVEL DE DETALHAMENTO do texto</h2>
+                    <i class="material-icons">article</i>
+                    
+                    <select name="detalhamento" id="detalhamento2">
+                        <option value="" selected>Selecione o detalhamento</option>
+                        <optgroup label="Estilos">
+                            <option value="Resumido">Resumido</option>
+                            <option value="Intermediário">Intermediário</option>
+                            <option value="Extenso">Extenso</option>
+                            <option value="Minúncias e detalhes">Com minúncias e detalhes</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Escolha uma FORMATAÇÃO de texto</h2>
+                    <i class="material-icons">grid_view</i>
+
+                    <select name="formatosTextos" id="formatosTextos2">
+                        <option value="" selected>Selecione o formato</option>
+                        <optgroup label="Formatos">
+                            <option value="Narrativa escrita">Narrativa escrita</option>
+                            <option value="Pergunta direta">Pergunta direta</option>
+                            <option value="Estruturado por tópicos">Estruturado por tópicos</option>
+                            <option value="de diálogo">De diálogo</option>
+                            <option value="de Comando">De Comando</option>
+                            <option value="de Caso de Uso ou Cenário">De Caso de Uso ou Cenário</option>
+                            <option value="Contínuo (Texto Corrido)">Contínuo (Texto Corrido)</option>
+                            <option value="de Resumo">De Resumo</option>
+                            <option value="de Instrução Técnica">De Instrução Técnica</option>
+                        </optgroup>
+                    </select>               
+                </div>
+
+
+
+                <div class="questions">
+                    <h2>Qual o OBJETIVO exato do texto ?</h2>
+                    <i class="material-icons">check</i>
+                    <p>Ex: "Escrever um resumo", "Criar uma história", "Fornecer uma explicação"</p>
+
+                    <input class="input-text2" type="text" name="objectiveText" id="objectiveText2" placeholder="Escreva seu objetivo aqui..." required>
+                </div>
+
+
+                
+                <div class="questions">
+                    <h2>Especifique o ESTILO desejado para o texto</h2>
+                    <i class="material-icons">palette</i>
+                    <select name="estilo" id="estilo2">
+                        <option value="" selected>Selecione o estilo</option>
+                        <optgroup label="Estilos">
+                            <option value="De forma concisa">De forma concisa</option>
+                            <option value="Com humor">Com humor</option>
+                            <option value="Em tom formal">Em tom formal</option>
+                            <option value="Em tom informal">Em tom informal</option>
+                            <option value="De forma persuasiva">De forma persuasiva</option>
+                            <option value="Em tom motivacional">Em tom motivacional</option>
+                            <option value="Em tom descritivo">Em tom descritivo</option>
+                            <option value="Em tom acadêmico">Em tom acadêmico</option>
+                            <option value="De forma poética">De forma poética</option>
+                            <option value="Em estilo jornalístico">Em estilo jornalístico</option>
+                            <option value="Em formato narrativo">Em formato narrativo</option>
+                            <option value="Com foco técnico">Com foco técnico</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Inclusão de EXEMPLOS</h2>
+                    <i class="material-icons">person</i>
+                    <select name="exemplos" id="exemplos2">
+                        <option value="" selected>Selecione exemplos</option>
+                        <optgroup label="Exemplos">
+                            <option value="Incluir exemplos práticos">Exemplos práticos</option>
+                            <option value="Explicação teórica sem exemplos">Explicação teórica sem exemplos</option>
+                            <option value="Explicação com analogias">Explicação com analogias</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Uso de FIGURAS e DIAGRAMAS</h2>
+                    <i class="material-icons">grid_view</i>
+
+                    <select name="FigurasDiagramas" id="FigurasDiagramas2">
+                        <option value="" selected>Figuras e diagramas</option>
+                        <optgroup label="Figuras e diagramas">
+                            <option value="Sinalização de figuras/diagramas">Sinalização de figuras/diagramas</option>
+                            <option value="Somente texto">Somente texto</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Defina oque NÃO DEVE ser incluido nele</h2>
+                    <i class="material-icons">close</i>
+                    <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não deixe de mencionar referências"</p>
+
+                    <input class="input-text2" type="text" name="preferencias" id="preferencias2" required value="Não inclua: ">
+                </div>
+
+
+                <div class="questions">
+                    <h2>Indique PARA QUEM o texto é direcionado</h2>
+                    <i class="material-icons">person</i>
+                    <select name="publicoAlvo" id="publicoAlvo2">
+                        <option value="" selected>Selecione o publico</option>
+                        <optgroup label="publicoAlvo">
+                            <option value="Para adolescentes">Para adolescentes</option>
+                            <option value="Para profissionais de tecnologia">Para profissionais de tecnologia</option>
+                            <option value="Para profissionais do marketing">Para profissionais do marketing</option>
+                            <option value="Para um público geral">Para um público geral</option>
+                            <option value="Para crianças">Para crianças</option>
+                            <option value="Para estudantes universitários">Para estudantes universitários</option>
+                            <option value="Para empreendedores">Para empreendedores</option>
+                            <option value="Para executivos">Para executivos</option>
+                            <option value="Para aposentados">Para aposentados</option>
+                            <option value="Para especialistas em saúde">Para especialistas em saúde</option>
+                            <option value="Para gamers">Para gamers</option>
+                            <option value="Para pesquisadores acadêmicos">Para pesquisadores acadêmicos</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <button class="btt" type="button" id="btt-id2">
                     Enviar
                 </button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
             </form>
@@ -205,7 +317,7 @@
 <script>
     var btt = document.getElementById('btt-id');
     var btt2 = document.getElementById('btt-id2');
-    var form = document.getElementById('iform');
+    var form1 = document.getElementById('iform');
     var form2 = document.getElementById('iform2');
 
     var gerarTextoBtt = document.getElementById('gerar-texto-btt');
@@ -213,7 +325,7 @@
 
 
     gerarTextoBtt.addEventListener('click', () =>{
-        form.style.display = 'flex';
+        form2.style.display = 'flex';
         // Use requestAnimationFrame para garantir que o navegador tenha tempo de renderizar
         requestAnimationFrame(() => {
             var divPreenchimento = document.getElementById('preenchimento');
@@ -224,13 +336,13 @@
             gerarTextoBtt.style.display = 'none'
             divButtons.style.display = 'none'
 
-            form.classList.add('show');
+            form2.classList.add('show');
         });
     })
 
 
     modificarTextoBtt.addEventListener('click', () =>{
-        form2.style.display = 'flex';
+        form1.style.display = 'flex';
 
         requestAnimationFrame(() => {
             var divPreenchimento = document.getElementById('preenchimento');
@@ -241,41 +353,86 @@
             gerarTextoBtt.style.display = 'none'
             divButtons.style.display = 'none'
 
-            form2.classList.add('show');
+            form1.classList.add('show');
         })
     })
 
-    
+
+
     btt.addEventListener('click', (event) => {
         event.preventDefault();
 
-        var assuntoTexto = document.getElementById('aboutText').value;
+        var textRef = document.getElementById('textRef').value;
         var formatoTextos = document.getElementById('formatosTextos').value;
         var estiloTextos = document.getElementById('estilo').value;
         var publicoAlvo = document.getElementById('publicoAlvo').value;
         var inputText = document.getElementsByClassName('input-text');
         var detalhamentoText = document.getElementById('detalhamento').value;
-        var exemplosText = document.getElementById('exemplos').value;
-        var FigurasDiagrmasText = document.getElementById('FigurasDiagrmas').value;
+        var FigurasDiagramasText = document.getElementById('FigurasDiagramas').value;
         
         var formValid = true
         var errors = []; // Array para armazenar mensagens de erro
 
-        function validateFields(value, fieldName){
-            if(value === ''){
-                errors.push(`Campo: <ins>${fieldName}</ins> não preenchido!`);
-                formValid = false;
+            function validateFields(value, fieldName){
+                if(value === ''){
+                    errors.push(`Campo: <ins>${fieldName}</ins> não preenchido!`);
+                    formValid = false;
+                }
             }
+    
+        validateFields(textRef, 'Texto de referência');
+        validateFields(detalhamentoText, 'Detalhamento');
+        validateFields(formatoTextos, 'Formato de texto');
+        validateFields(inputText.value, 'Objetivo');
+        validateFields(estiloTextos, 'Estilo de texto');
+        validateFields(FigurasDiagramasText, 'Figuras e diagramas');
+        validateFields(publicoAlvo, 'Público alvo');                    
+
+        if (!formValid) {
+            // Exibir as mensagens de erro em um único alerta com quebras de linha
+            Swal.fire({
+                title: 'Erro!',
+                html: errors.join('<br>'), // Junta mensagens com <br> para quebras de linha
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+        }else{
+            form1.submit();
         }
+    });
+
+
+
+    btt2.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        var assuntoTexto = document.getElementById('aboutText2').value;
+        var formatoTextos = document.getElementById('formatosTextos2').value;
+        var estiloTextos = document.getElementById('estilo2').value;
+        var publicoAlvo = document.getElementById('publicoAlvo2').value;
+        var inputText = document.getElementsByClassName('input-text2');
+        var detalhamentoText = document.getElementById('detalhamento2').value;
+        var exemplosText = document.getElementById('exemplos2').value;
+        var FigurasDiagramasText = document.getElementById('FigurasDiagramas2').value;
+        
+        var formValid = true
+        var errors = []; // Array para armazenar mensagens de erro
+
+            function validateFields(value, fieldName){
+                if(value === ''){
+                    errors.push(`Campo: <ins>${fieldName}</ins> não preenchido!`);
+                    formValid = false;
+                }
+            }
 
         validateFields(assuntoTexto, 'Assunto do texto');
         validateFields(detalhamentoText, 'Detalhamento');
         validateFields(formatoTextos, 'Formato de texto');
-        validateFields(inputText[1].value, 'Objetivo');
+        validateFields(inputText[0].value, 'Objetivo');
         validateFields(estiloTextos, 'Estilo de texto');
         validateFields(exemplosText, 'Exemplos');
-        validateFields(FigurasDiagrmasText, 'Figuras e diagramas');
-        validateFields(inputText[2].value, 'Preferências');
+        validateFields(FigurasDiagramasText, 'Figuras e diagramas');
+        validateFields(inputText[1].value, 'Preferências');
         validateFields(publicoAlvo, 'Público alvo');
 
         if (!formValid) {
@@ -286,29 +443,10 @@
                 icon: 'error',
                 confirmButtonText: 'Ok'
             });
-        } else {
-            form.submit();
-        }
-    });
-
-
-    btt2.addEventListener('click', (event) =>{
-        event.preventDefault();
-
-        var textRef = document.getElementById('textRef2').value;
-
-        if(textRef.trim() === ''){
-            Swal.fire({
-                title: 'Erro!',
-                html: `Campo <ins>texto de referência</ins> não preenchido!`,
-                icon: 'error',
-                confirmButtonText: 'Ok'
-            });
         }else{
             form2.submit();
         }
-
-    })
+    });
 
 </script>
 
