@@ -62,7 +62,7 @@ div#filho{
 }
 #btt:hover{
     transform: scale(1.05);
-    background-color: rgba(0, 0, 0, 0.563);
+    background-color: rgb(23, 23, 23);
 }
 
 #p-prompt{
@@ -86,17 +86,19 @@ button#btt-id{
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.5s ease;
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 #btt-id:hover{
     transform: scale(1.08);
+    background-color: rgb(23, 23, 23);
 }
 
 a{
-    color: black;
+    color: white;
     text-decoration: none;
 }

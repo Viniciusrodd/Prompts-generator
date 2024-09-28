@@ -34,9 +34,8 @@ router.post('/promptGenerator', (req, res) =>{
     var estilo = req.body.estilo.toUpperCase();
     var preferencias = req.body.preferencias.toUpperCase();
     var publicoAlvo = req.body.publicoAlvo.toUpperCase();
-    var textRef = req.body.textRef.toUpperCase();
 
-    var campos = { assunto, formato, objetivo, estilo, preferencias, publicoAlvo, textRef }
+    var campos = { assunto, formato, objetivo, estilo, preferencias, publicoAlvo }
 
     var prompt = `poderia me construir um texto sobre este assunto: ${assunto} 
     com o formato: ${formato}, ressaltando seus pontos mais importantes, 

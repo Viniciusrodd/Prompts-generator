@@ -20,7 +20,16 @@
 
         <div id="texto-gerado">
             <div id="preenchimento">
-
+                <p id="p-prompt">
+                    Gerar um bom prompt para uma IA, tipo o ChatGPT, é como dar 
+                    as coordenadas certas para uma viagem: quanto mais claro 
+                    e direto você for, melhor será o resultado. Se você disser 
+                    exatamente o que quer, com detalhes e contexto, a IA vai 
+                    te levar para o destino certo, sem desvios ou confusões. 
+                    Isso faz a IA trabalhar mais rápido e de forma mais eficiente. 
+                    Então, caprichar no prompt é o segredo para obter respostas 
+                    certeiras e economizar tempo!
+                </p>
             </div>
 
             <form action="promptGeneratorModify" method="post" id="iform2">
@@ -30,7 +39,7 @@
                     <h2>Qual texto deseja modificar?</h2>
                     <i class="material-icons">article</i>
 
-                    <textarea name="textModify" id="textRef">
+                    <textarea name="textModify" id="textRef2">
 
                     </textarea>
                 </div>
@@ -39,6 +48,8 @@
                     Enviar
                 </button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->
             </form>
+
+
 
             <form action="promptGenerator" method="post" id="iform">
                 <h1 class="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
@@ -49,6 +60,22 @@
                     <p>Ex: "História do Brasil", "Politica", "Programação"</p>
 
                     <input class="input-text" type="text" name="aboutText" id="aboutText" placeholder="Escreva o assunto aqui..." required>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Escolha o NIVEL DE DETALHAMENTO do texto</h2>
+                    <i class="material-icons">article</i>
+                    
+                    <select name="detalhamento" id="detalhamento">
+                        <option value="" selected>Selecione o detalhamento</option>
+                        <optgroup label="Estilos">
+                            <option value="Resumido">Resumido</option>
+                            <option value="Intermediário">Intermediário</option>
+                            <option value="Extenso">Extenso</option>
+                            <option value="Minúncias e detalhes">Com minúncias e detalhes</option>
+                        </optgroup>
+                    </select>
                 </div>
 
 
@@ -108,6 +135,34 @@
 
 
                 <div class="questions">
+                    <h2>Inclusão de EXEMPLOS</h2>
+                    <i class="material-icons">person</i>
+                    <select name="exemplos" id="exemplos">
+                        <option value="" selected>Selecione exemplos</option>
+                        <optgroup label="Exemplos">
+                            <option value="Incluir exemplos práticos">Incluir exemplos práticos</option>
+                            <option value="Explicação teórica sem exemplos">Explicação teórica sem exemplos</option>
+                            <option value="Explicação com analogias">Explicação com analogias</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <div class="questions">
+                    <h2>Uso de FIGURAS e DIAGRAMAS</h2>
+                    <i class="material-icons">grid_view</i>
+
+                    <select name="FigurasDiagrmas" id="FigurasDiagrmas">
+                        <option value="" selected>Figuras e diagramas</option>
+                        <optgroup label="Figuras e diagramas">
+                            <option value="Inserir sinalização de figuras/diagramas">Inserir sinalização de figuras/diagramas</option>
+                            <option value="Somente texto">Somente texto</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <div class="questions">
                     <h2>Defina oque NÃO DEVE ser incluido nele</h2>
                     <i class="material-icons">close</i>
                     <p>Ex: "Sem jargões técnicos", "Evite clichês", "Não deixe de mencionar referências"</p>
@@ -136,24 +191,6 @@
                             <option value="Para pesquisadores acadêmicos">Para pesquisadores acadêmicos</option>
                         </optgroup>
                     </select>
-                </div>
-
-
-                <div class="questions">
-                    <h3>(opcional)</h3>
-                    <h2>Inserir um texto já existente?</h2>
-                    <i class="material-icons">content_copy</i>
-                    <div id="inputsRadios">
-                        <input class="input-radio" type="radio" name="resposta2" id="isim2" required>
-                        <label for="isim">sim</label>
-                    
-                        <input class="input-radio" type="radio" name="resposta2" id="inao2" required>
-                        <label for="inao">não</label>
-                    </div>
-
-                    <textarea name="textRef" id="textRef">
-
-                    </textarea>
                 </div>
 
 
@@ -249,15 +286,15 @@
     });
 
 
-    btt2.addEventListener('click', () =>{
+    btt2.addEventListener('click', (event) =>{
         event.preventDefault();
 
-        var textRef = document.getElementById('textRef').value;
+        var textRef = document.getElementById('textRef2').value;
 
-        if(textRef === ''){
+        if(textRef.trim() === ''){
             Swal.fire({
                 title: 'Erro!',
-                text: `Campo ${textRef} não preenchido!`,
+                html: `Campo <ins>texto de referência</ins> não preenchido!`,
                 icon: 'error',
                 confirmButtonText: 'Ok'
             });
