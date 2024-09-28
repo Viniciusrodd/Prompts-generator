@@ -11,6 +11,22 @@ router.get('/homepage', (req, res) =>{
 })
 
 
+router.post('/promptGeneratorModify', (req, res) =>{
+    var textModify = req.body.textModify.toUpperCase();
+    var campos2 = { textModify }
+
+    var prompt2 = `Aqui ta seu texto ref gerado ${textModify}`
+
+    if(campos2 === ''){
+        res.render('./homepage')
+    }else{
+        res.render('./prompt', {
+            prompt: prompt2
+        })    
+    }
+})
+
+
 router.post('/promptGenerator', (req, res) =>{
     var assunto = req.body.aboutText.toUpperCase();
     var formato = req.body.formatosTextos.toUpperCase();
@@ -20,6 +36,7 @@ router.post('/promptGenerator', (req, res) =>{
     var publicoAlvo = req.body.publicoAlvo.toUpperCase();
     var textRef = req.body.textRef.toUpperCase();
 
+    var campos = { assunto, formato, objetivo, estilo, preferencias, publicoAlvo, textRef }
 
     var prompt = `poderia me construir um texto sobre este assunto: ${assunto} 
     com o formato: ${formato}, ressaltando seus pontos mais importantes, 
@@ -33,14 +50,13 @@ router.post('/promptGenerator', (req, res) =>{
     ${preferencias}, e além disso desejo que o público alvo
     desse texto seja: ${publicoAlvo}, entenda que é 
     importante que eu não perca nenhuma informação essencial sobre o tema abordado
-    nos titulos e subtitulos do texto. Um possível texto como referência: 
-    ${textRef}`
+    nos titulos e subtitulos do texto. Um possível texto como referência: ${textRef}`
 
-    if(formato == ''){
+    if(campos === ''){
         res.render('./homepage')
     }else{
         res.render('./prompt', {
-            formatoVar: prompt
+            prompt: prompt
         })    
     }
 })

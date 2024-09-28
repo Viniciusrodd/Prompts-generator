@@ -36,7 +36,7 @@ h1#titulo-principal{
     background-color: black;
 }
 
-#h1-prompts{
+.h1-prompts{
     font-size: 30px;
     color: white;
     padding: 10px;
@@ -71,6 +71,13 @@ div#texto-gerado{
     width: 70%;
     border-radius: 20px;
     background-image: linear-gradient(to right, #0269a900, #0269a97a, #0269a900);
+}
+
+iform2{
+    display: none;
+    opacity: 0; /* Começa invisível */
+    transform: translateY(-20px); /* Começa ligeiramente acima */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Define a animação */
 }
 
 form{

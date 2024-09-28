@@ -22,9 +22,26 @@
             <div id="preenchimento">
 
             </div>
-            <form action="promptGenerator" method="post" id="iform">
-                <h1 id="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
 
+            <form action="promptGeneratorModify" method="post" id="iform2">
+                <h1 class="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
+
+                <div class="questions">
+                    <h2>Qual texto deseja modificar?</h2>
+                    <i class="material-icons">article</i>
+
+                    <textarea name="textModify" id="textRef">
+
+                    </textarea>
+                </div>
+
+                <button class="btt" type="button" id="btt-id2">
+                    Enviar
+                </button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->
+            </form>
+
+            <form action="promptGenerator" method="post" id="iform">
+                <h1 class="h1-prompts">Escolha abaixo opções de construção para Prompts</h1>
 
                 <div class="questions">
                     <h2>Qual ASSUNTO o texto deve abordar?</h2>
@@ -140,8 +157,9 @@
                 </div>
 
 
-
-                <button class="btt" type="button" id="btt-id">Enviar</button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
+                <button class="btt" type="button" id="btt-id">
+                    Enviar
+                </button> <!--Type="button" usado para evitar que o formulário seja enviado automaticamente antes da validação.-->    
             </form>
         </div>    
     </div>
@@ -149,7 +167,9 @@
 
 <script>
     var btt = document.getElementById('btt-id');
+    var btt2 = document.getElementById('btt-id2');
     var form = document.getElementById('iform');
+    var form2 = document.getElementById('iform2');
 
     var gerarTextoBtt = document.getElementById('gerar-texto-btt');
     var modificarTextoBtt = document.getElementById('modificar-texto-btt');
@@ -167,16 +187,17 @@
         });
     })
 
+
     modificarTextoBtt.addEventListener('click', () =>{
-        form.style.display = 'flex';
-        
+        form2.style.display = 'flex';
+
         requestAnimationFrame(() => {
             var divPreenchimento = document.getElementById('preenchimento');
             divPreenchimento.style.display = 'none'
             modificarTextoBtt.style.display = 'none'
             gerarTextoBtt.style.display = 'none'
 
-            form.classList.add('show');
+            form2.classList.add('show');
         })
     })
 
@@ -219,6 +240,25 @@
             form.submit();
         }
     });
+
+
+    btt2.addEventListener('click', () =>{
+        event.preventDefault();
+
+        var textRef = document.getElementById('textRef').value;
+
+        if(textRef === ''){
+            Swal.fire({
+                title: 'Erro!',
+                text: `Campo ${textRef} não preenchido!`,
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+        }else{
+            form2.submit();
+        }
+
+    })
 
 </script>
 
