@@ -12,7 +12,7 @@ router.get('/homepage', (req, res) =>{
 
 
 router.post('/promptGeneratorModify', (req, res) =>{
-    var textRef = req.body.textModify.toUpperCase();
+    var textRef = req.body.textModify;
     var especificacaoText = req.body.especificacao.toUpperCase();
     var detalhamento = req.body.detalhamento.toUpperCase();
     var formato = req.body.formatosTextos.toUpperCase();
