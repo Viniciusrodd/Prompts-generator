@@ -13,6 +13,7 @@ router.get('/homepage', (req, res) =>{
 
 router.post('/promptGeneratorModify', (req, res) =>{
     var textRef = req.body.textModify.toUpperCase();
+    var especificacaoText = req.body.especificacao.toUpperCase();
     var detalhamento = req.body.detalhamento.toUpperCase();
     var formato = req.body.formatosTextos.toUpperCase();
     var objetivo = req.body.objectiveText.toUpperCase();
@@ -27,7 +28,8 @@ router.post('/promptGeneratorModify', (req, res) =>{
         estilo, 
         publicoAlvo, 
         detalhamento,
-        figurasDiagramas
+        figurasDiagramas,
+        especificacaoText
     }
 
     var prompt2 = `
@@ -35,6 +37,7 @@ router.post('/promptGeneratorModify', (req, res) =>{
     Gostaria de adaptá-lo, e para isso, quero personalizar da seguinte forma:
 
     - Formato do texto: ${formato}.
+    - Especificação para trabalhar com o texto referência: ${especificacaoText}.
     - Nível de detalhamento: ${detalhamento}.
     - O objetivo é: ${objetivo}.
     - Estilo de escrita preferido: ${estilo}.
@@ -81,7 +84,7 @@ router.post('/promptGenerator', (req, res) =>{
     }
 
     var prompt = `
-    Poderia criar um texto sobre o seguinte tema: ${assunto}Gostaria que ele 
+    Poderia criar um texto sobre o seguinte tema: ${assunto}. Gostaria que ele 
     fosse estruturado no formato: ${formato}, com um nível de detalhamento: 
     ${detalhamento}. Para tornar o conteúdo mais claro, seria ótimo incluir: ${exemplos}. 
     Me seria muito útil ter: ${figurasDiagramas}, caso necessário. 

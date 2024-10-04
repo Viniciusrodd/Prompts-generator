@@ -49,6 +49,21 @@
 
 
                 <div class="questions">
+                    <h2>Como gostaria de trabalhar com esse texto de referência ?</h2>
+                    <i class="material-icons">grid_view</i>
+
+                    <select name="especificacao" id="especificacao">
+                        <option value="" selected>Selecione uma especificação</option>
+                        <optgroup label="Especificações">
+                            <option value="Reformulá-lo">Reformulá-lo</option>
+                            <option value="Resumi-lo">Resumi-lo</option>
+                            <option value="Estruturá-lo">Estruturá-lo</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <div class="questions">
                     <h2>Escolha o NIVEL DE DETALHAMENTO do texto</h2>
                     <i class="material-icons">article</i>
                     
@@ -78,6 +93,7 @@
                             <option value="de Comando">De Comando</option>
                             <option value="de Caso de Uso ou Cenário">De Caso de Uso ou Cenário</option>
                             <option value="Contínuo (Texto Corrido)">Contínuo (Texto Corrido)</option>
+                            <option value="Continuo + Tópicos se necessário">Continuo + tópicos somente quando necessário</option>
                             <option value="de Resumo">De Resumo</option>
                             <option value="de Instrução Técnica">De Instrução Técnica</option>
                         </optgroup>
@@ -363,6 +379,7 @@
         event.preventDefault();
 
         var textRef = document.getElementById('textRef').value;
+        var especificacao = document.getElementById('especificacao').value
         var formatoTextos = document.getElementById('formatosTextos').value;
         var estiloTextos = document.getElementById('estilo').value;
         var publicoAlvo = document.getElementById('publicoAlvo').value;
@@ -381,6 +398,7 @@
             }
     
         validateFields(textRef, 'Texto de referência');
+        validateFields(especificacao, 'Especificação de texto');
         validateFields(detalhamentoText, 'Detalhamento');
         validateFields(formatoTextos, 'Formato de texto');
         validateFields(inputText.value, 'Objetivo');
