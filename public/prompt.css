@@ -19,7 +19,7 @@ div#pai{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0px 120px 0px;
     width: 100%;
     background-image: url(/imagens/imagem2.jpg);
     background-size: cover;
@@ -80,7 +80,6 @@ div#filho{
 button#btt-id{
     margin-top: 20px;
     height: 50px;
-    width: 22%;
     font-size: 20px;
     font-weight: bold;
     border-top: none;

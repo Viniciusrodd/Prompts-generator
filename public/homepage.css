@@ -18,7 +18,7 @@ div#pai{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0px 80px 0px;
     width: 100%;
     background-image: url(/imagens/imagem2.jpg);
     background-size: cover;
@@ -122,9 +122,6 @@ div.questions{
     margin-top: 10px;
     margin-bottom: 40px;
     transition: transform 0.5s ease, opacity 0.5s ease;
-}
-.questions:hover{
-    transform: scale(1.05);
 }
 
 h2{
